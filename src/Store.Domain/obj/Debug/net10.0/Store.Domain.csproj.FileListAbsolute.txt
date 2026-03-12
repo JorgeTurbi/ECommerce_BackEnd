@@ -9,3 +9,5 @@ C:\Drive Microsoft\OneDrive\Documentos\Projects\ZOCO\BackEnd\src\Store.Domain\ob
 C:\Drive Microsoft\OneDrive\Documentos\Projects\ZOCO\BackEnd\src\Store.Domain\obj\Debug\net10.0\refint\Store.Domain.dll
 C:\Drive Microsoft\OneDrive\Documentos\Projects\ZOCO\BackEnd\src\Store.Domain\obj\Debug\net10.0\Store.Domain.pdb
 C:\Drive Microsoft\OneDrive\Documentos\Projects\ZOCO\BackEnd\src\Store.Domain\obj\Debug\net10.0\ref\Store.Domain.dll
+C:\Drive Microsoft\OneDrive\Documentos\Projects\ZOCO\BackEnd\src\Store.Domain\obj\Debug\net10.0\Store.Domain.csproj.AssemblyReference.cache
+C:\Drive Microsoft\OneDrive\Documentos\Projects\ZOCO\BackEnd\src\Store.Domain\obj\Debug\net10.0\Store.Domain.sourcelink.json

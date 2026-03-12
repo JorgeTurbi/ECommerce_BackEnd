@@ -13,3 +13,4 @@ C:\Drive Microsoft\OneDrive\Documentos\Projects\ZOCO\BackEnd\src\Store.Applicati
 C:\Drive Microsoft\OneDrive\Documentos\Projects\ZOCO\BackEnd\src\Store.Application\obj\Debug\net10.0\refint\Store.Application.dll
 C:\Drive Microsoft\OneDrive\Documentos\Projects\ZOCO\BackEnd\src\Store.Application\obj\Debug\net10.0\Store.Application.pdb
 C:\Drive Microsoft\OneDrive\Documentos\Projects\ZOCO\BackEnd\src\Store.Application\obj\Debug\net10.0\ref\Store.Application.dll
+C:\Drive Microsoft\OneDrive\Documentos\Projects\ZOCO\BackEnd\src\Store.Application\obj\Debug\net10.0\Store.Application.sourcelink.json

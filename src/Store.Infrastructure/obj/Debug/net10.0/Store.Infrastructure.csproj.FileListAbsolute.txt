@@ -15,3 +15,4 @@ C:\Drive Microsoft\OneDrive\Documentos\Projects\ZOCO\BackEnd\src\Store.Infrastru
 C:\Drive Microsoft\OneDrive\Documentos\Projects\ZOCO\BackEnd\src\Store.Infrastructure\obj\Debug\net10.0\refint\Store.Infrastructure.dll
 C:\Drive Microsoft\OneDrive\Documentos\Projects\ZOCO\BackEnd\src\Store.Infrastructure\obj\Debug\net10.0\Store.Infrastructure.pdb
 C:\Drive Microsoft\OneDrive\Documentos\Projects\ZOCO\BackEnd\src\Store.Infrastructure\obj\Debug\net10.0\ref\Store.Infrastructure.dll
+C:\Drive Microsoft\OneDrive\Documentos\Projects\ZOCO\BackEnd\src\Store.Infrastructure\obj\Debug\net10.0\Store.Infrastructure.sourcelink.json
