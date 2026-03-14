@@ -11,17 +11,11 @@ public sealed class GetCustomerByIdHandler
 {
     private readonly IApplicationDbContext _context;
 
-    /// <summary>
-    /// Inicializa el handler con el contexto de lectura.
-    /// </summary>
     public GetCustomerByIdHandler(IApplicationDbContext context)
     {
         _context = context ?? throw new ArgumentNullException(nameof(context));
     }
 
-    /// <summary>
-    /// Obtiene un cliente por su identificador y lo proyecta a un DTO de detalle.
-    /// </summary>
     public async Task<CustomerDetailsResponse?> Handle(GetCustomerByIdQuery query, CancellationToken ct)
     {
         return await _context.Customers
@@ -29,9 +23,11 @@ public sealed class GetCustomerByIdHandler
             .Where(customer => customer.Id == new CustomerId(query.CustomerId))
             .Select(customer => new CustomerDetailsResponse(
                 customer.Id.Value,
-                customer.Name,
+                customer.Type,
+                customer.FirstName,
                 customer.LastName,
-                customer.FullName,
+                customer.CompanyName,
+                customer.DisplayName,
                 customer.Email.Value,
                 customer.PhoneNumber.Value,
                 customer.Identify.Value,

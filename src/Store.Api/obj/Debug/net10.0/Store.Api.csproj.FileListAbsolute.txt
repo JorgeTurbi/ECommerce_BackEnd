@@ -238,3 +238,4 @@ C:\Drive Microsoft\OneDrive\Documentos\Projects\ZOCO\BackEnd\src\Store.Api\bin\D
 C:\Drive Microsoft\OneDrive\Documentos\Projects\ZOCO\BackEnd\src\Store.Api\bin\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 c:\Drive Microsoft\OneDrive\Documentos\Projects\ZOCO\BackEnd\src\Store.Api\bin\Debug\net10.0\Store.Api.xml
 c:\Drive Microsoft\OneDrive\Documentos\Projects\ZOCO\BackEnd\src\Store.Api\obj\Debug\net10.0\Store.Api.xml
+C:\Drive Microsoft\OneDrive\Documentos\Projects\ZOCO\BackEnd\src\Store.Api\bin\Debug\net10.0\ErrorOr.dll

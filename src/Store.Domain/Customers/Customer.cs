@@ -1,5 +1,7 @@
 namespace Store.Domain.Customers;
 
+using Store.Domain.Enums;
+using Store.Domain.Errors;
 using Store.Domain.Primitives;
 using Store.Domain.ValueObjects;
 
@@ -11,11 +13,25 @@ public sealed class Customer : AggregateRoot
     /// <summary>
     /// Inicializa una nueva instancia del cliente con todos sus datos de negocio.
     /// </summary>
-    public Customer(CustomerId id, string name, string lastName, PhoneNumber phoneNumber, Identify identify, EmailAddress email, Address address, bool active)
+    public Customer(
+        CustomerId id,
+        CustomerType customerType,
+        string? firstName,
+        string? lastName,
+        string? companyName,
+        PhoneNumber phoneNumber,
+        Identify identify,
+        EmailAddress email,
+        Address address,
+        bool active)
     {
+        Validate(customerType, firstName, lastName, companyName, identify);
+
         Id = id;
-        Name = name;
-        LastName = lastName;
+        Type = customerType;
+        FirstName = Normalize(firstName);
+        LastName = Normalize(lastName);
+        CompanyName = Normalize(companyName);
         PhoneNumber = phoneNumber;
         Identify = identify;
         Email = email;
@@ -30,48 +46,76 @@ public sealed class Customer : AggregateRoot
     {
     }
 
-    /// <summary>
-    /// Identificador unico del cliente.
-    /// </summary>
     public CustomerId Id { get; private set; } = default!;
 
     /// <summary>
-    /// Nombre del cliente.
+    /// Tipo de cliente dentro del ecommerce.
     /// </summary>
-    public string Name { get; private set; } = string.Empty;
+    public CustomerType Type { get; private set; }
 
     /// <summary>
-    /// Apellido del cliente.
+    /// Nombre del cliente cuando es una persona fisica.
     /// </summary>
-    public string LastName { get; private set; } = string.Empty;
+    public string? FirstName { get; private set; }
 
     /// <summary>
-    /// Nombre completo calculado a partir del nombre y apellido.
+    /// Apellido del cliente cuando es una persona fisica.
     /// </summary>
-    public string FullName => $"{Name} {LastName}";
+    public string? LastName { get; private set; }
 
     /// <summary>
-    /// Numero telefonico validado del cliente.
+    /// Nombre comercial o razon social cuando el cliente es una empresa.
     /// </summary>
+    public string? CompanyName { get; private set; }
+
+    /// <summary>
+    /// Nombre visible del cliente para listados y pantallas.
+    /// </summary>
+    public string DisplayName =>
+        Type == CustomerType.Business
+            ? CompanyName ?? string.Empty
+            : $"{FirstName} {LastName}".Trim();
+
+    /// <summary>
+    /// Alias de compatibilidad para vistas que aun esperan un nombre completo.
+    /// </summary>
+    public string FullName => DisplayName;
+
     public PhoneNumber PhoneNumber { get; private set; } = default!;
 
-    /// <summary>
-    /// Documento de identificacion del cliente.
-    /// </summary>
     public Identify Identify { get; private set; } = default!;
 
-    /// <summary>
-    /// Correo electronico validado del cliente.
-    /// </summary>
     public EmailAddress Email { get; private set; } = default!;
 
-    /// <summary>
-    /// Direccion principal del cliente.
-    /// </summary>
     public Address Address { get; private set; } = default!;
 
-    /// <summary>
-    /// Indica si el cliente se encuentra activo en el sistema.
-    /// </summary>
     public bool Active { get; private set; }
+
+    private static void Validate(CustomerType customerType, string? firstName, string? lastName, string? companyName, Identify identify)
+    {
+        if (customerType == CustomerType.Individual)
+        {
+            if (string.IsNullOrWhiteSpace(firstName) || string.IsNullOrWhiteSpace(lastName))
+                throw new DomainException(new Error("customer.individual.name_required", "El cliente individual debe tener nombre y apellido."));
+
+            if (identify.Type != IdentificationType.Cedula)
+                throw new DomainException(new Error("customer.individual.identification_invalid", "Un cliente individual debe usar una cedula."));
+
+            return;
+        }
+
+        if (string.IsNullOrWhiteSpace(companyName))
+            throw new DomainException(new Error("customer.business.company_name_required", "El cliente empresa debe tener un nombre comercial o razon social."));
+
+        if (identify.Type != IdentificationType.RNC)
+            throw new DomainException(new Error("customer.business.identification_invalid", "Un cliente empresa debe usar un RNC."));
+    }
+
+    private static string? Normalize(string? value)
+    {
+        if (string.IsNullOrWhiteSpace(value))
+            return null;
+
+        return value.Trim();
+    }
 }

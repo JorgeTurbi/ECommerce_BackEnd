@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace Store.Infrastructure.Persistence.Migrations
+namespace Store.Infrastructure.src.Store.Infrastructure.Persistence.Migrations
 {
     /// <inheritdoc />
     public partial class InitialMigrations : Migration
@@ -16,14 +16,16 @@ namespace Store.Infrastructure.Persistence.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
-                    LastName = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    Type = table.Column<int>(type: "int", nullable: false),
+                    FirstName = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true),
+                    LastName = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true),
+                    CompanyName = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: true),
                     PhoneNumber = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     Identify = table.Column<string>(type: "nvarchar(11)", maxLength: 11, nullable: false),
                     Email = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     Address_Country = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     Address_Line1 = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
-                    Address_Line2 = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
+                    Address_Line2 = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: true),
                     Address_City = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     Address_State = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     Address_ZipCode = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: false),

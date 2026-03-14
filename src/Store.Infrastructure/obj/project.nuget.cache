@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "aHWcPxIVQvU=",
+  "dgSpecHash": "SLgkleoY/6k=",
   "success": true,
   "projectFilePath": "C:\\Drive Microsoft\\OneDrive\\Documentos\\Projects\\ZOCO\\BackEnd\\src\\Store.Infrastructure\\Store.Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Administrator\\.nuget\\packages\\azure.core\\1.47.1\\azure.core.1.47.1.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\azure.identity\\1.14.2\\azure.identity.1.14.2.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\dotnetenv\\3.1.1\\dotnetenv.3.1.1.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\erroror\\2.0.1\\erroror.2.0.1.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\fastexpressioncompiler\\5.3.0\\fastexpressioncompiler.5.3.0.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\fluentvalidation\\12.1.1\\fluentvalidation.12.1.1.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.3.1\\fluentvalidation.aspnetcore.11.3.1.nupkg.sha512",

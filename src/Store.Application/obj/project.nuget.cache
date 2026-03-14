@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "gQaWaKuisvk=",
+  "dgSpecHash": "J7su0vjZfFA=",
   "success": true,
   "projectFilePath": "C:\\Drive Microsoft\\OneDrive\\Documentos\\Projects\\ZOCO\\BackEnd\\src\\Store.Application\\Store.Application.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Administrator\\.nuget\\packages\\erroror\\2.0.1\\erroror.2.0.1.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\fastexpressioncompiler\\5.3.0\\fastexpressioncompiler.5.3.0.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\fluentvalidation\\12.1.1\\fluentvalidation.12.1.1.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.3.1\\fluentvalidation.aspnetcore.11.3.1.nupkg.sha512",

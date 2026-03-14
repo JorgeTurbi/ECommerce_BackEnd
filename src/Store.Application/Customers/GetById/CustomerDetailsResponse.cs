@@ -1,3 +1,5 @@
+using Store.Domain.Enums;
+
 namespace Store.Application.Customers.GetById;
 
 /// <summary>
@@ -5,9 +7,11 @@ namespace Store.Application.Customers.GetById;
 /// </summary>
 public sealed record CustomerDetailsResponse(
     Guid Id,
-    string Name,
-    string LastName,
-    string FullName,
+    CustomerType CustomerType,
+    string? FirstName,
+    string? LastName,
+    string? CompanyName,
+    string DisplayName,
     string Email,
     string PhoneNumber,
     string Identify,

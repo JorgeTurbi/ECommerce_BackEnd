@@ -27,7 +27,7 @@ app.UseSwaggerUI(c =>
     c.RoutePrefix = "Swagger"; // Hace que Swagger UI esté disponible en la raíz (http://localhost:5000/Swagger)
 });
 
-
+app.UseExceptionHandler("/error");
 app.UseHttpsRedirection();
 
 app.UseAuthorization();

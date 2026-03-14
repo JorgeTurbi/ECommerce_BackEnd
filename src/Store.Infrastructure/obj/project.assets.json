@@ -53,6 +53,19 @@
           "lib/netstandard1.3/DotNetEnv.dll": {}
         }
       },
+      "ErrorOr/2.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/ErrorOr.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/ErrorOr.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "FastExpressionCompiler/5.3.0": {
         "type": "package",
         "compile": {
@@ -2221,6 +2234,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v10.0",
         "dependencies": {
+          "ErrorOr": "2.0.1",
           "FluentValidation": "12.1.1",
           "FluentValidation.AspNetCore": "11.3.1",
           "Microsoft.EntityFrameworkCore": "10.0.5",
@@ -2238,6 +2252,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v10.0",
         "dependencies": {
+          "ErrorOr": "2.0.1",
           "WolverineFx": "5.18.2"
         },
         "compile": {
@@ -2302,6 +2317,23 @@
         "dotnetenv.3.1.1.nupkg.sha512",
         "dotnetenv.nuspec",
         "lib/netstandard1.3/DotNetEnv.dll"
+      ]
+    },
+    "ErrorOr/2.0.1": {
+      "sha512": "aje9lUVEAsusPFmaRcVM5EUqWBofd7hYtb9N8+ycgPYrtOzyFajMpzRgIO4uuiCllNLBc3x48+cpA+4v4koUDQ==",
+      "type": "package",
+      "path": "erroror/2.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "erroror.2.0.1.nupkg.sha512",
+        "erroror.nuspec",
+        "icon-square.png",
+        "lib/net6.0/ErrorOr.dll",
+        "lib/net6.0/ErrorOr.xml",
+        "lib/netstandard2.0/ErrorOr.dll",
+        "lib/netstandard2.0/ErrorOr.xml"
       ]
     },
     "FastExpressionCompiler/5.3.0": {

@@ -8,7 +8,7 @@ using Store.Infrastructure.Persistence;
 
 #nullable disable
 
-namespace Store.Infrastructure.Persistence.Migrations
+namespace Store.Infrastructure.src.Store.Infrastructure.Persistence.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
     partial class ApplicationDbContextModelSnapshot : ModelSnapshot
@@ -30,8 +30,16 @@ namespace Store.Infrastructure.Persistence.Migrations
                     b.Property<bool>("Active")
                         .HasColumnType("bit");
 
+                    b.Property<string>("CompanyName")
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
                     b.Property<string>("Email")
                         .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("FirstName")
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
@@ -41,18 +49,15 @@ namespace Store.Infrastructure.Persistence.Migrations
                         .HasColumnType("nvarchar(11)");
 
                     b.Property<string>("LastName")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("PhoneNumber")
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("Type")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -91,7 +96,6 @@ namespace Store.Infrastructure.Persistence.Migrations
                                 .HasColumnType("nvarchar(200)");
 
                             b1.Property<string>("Line2")
-                                .IsRequired()
                                 .HasMaxLength(200)
                                 .HasColumnType("nvarchar(200)");
 

@@ -10,26 +10,22 @@ public sealed class GetAllCustomersHandler
 {
     private readonly IApplicationDbContext _context;
 
-    /// <summary>
-    /// Inicializa el handler con el contexto de lectura.
-    /// </summary>
     public GetAllCustomersHandler(IApplicationDbContext context)
     {
         _context = context ?? throw new ArgumentNullException(nameof(context));
     }
 
-    /// <summary>
-    /// Obtiene todos los clientes proyectados a un modelo de lectura liviano.
-    /// </summary>
     public async Task<IReadOnlyList<CustomerListItemResponse>> Handle(GetAllCustomersQuery query, CancellationToken ct)
     {
         return await _context.Customers
             .AsNoTracking()
             .Select(customer => new CustomerListItemResponse(
                 customer.Id.Value,
-                customer.Name,
+                customer.Type,
+                customer.FirstName,
                 customer.LastName,
-                customer.FullName,
+                customer.CompanyName,
+                customer.DisplayName,
                 customer.Email.Value,
                 customer.PhoneNumber.Value,
                 customer.Active))

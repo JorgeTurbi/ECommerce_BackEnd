@@ -1,6 +1,5 @@
-
-using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Store.Domain.Customers;
 using Store.Domain.ValueObjects;
 
@@ -15,18 +14,23 @@ public class CustomerConfiguration : IEntityTypeConfiguration<Customer>
         builder.HasKey(x => x.Id);
 
         builder.Property(x => x.Id).HasConversion(
-            CustomerId => CustomerId.Value,
-            value => new CustomerId(value)
-        );
+            customerId => customerId.Value,
+            value => new CustomerId(value));
 
-        builder.Property(x => x.Name)
-            .HasMaxLength(100)
+        builder.Property(x => x.Type)
+            .HasConversion<int>()
             .IsRequired();
+
+        builder.Property(x => x.FirstName)
+            .HasMaxLength(100);
 
         builder.Property(x => x.LastName)
-            .HasMaxLength(100)
-            .IsRequired();
+            .HasMaxLength(100);
 
+        builder.Property(x => x.CompanyName)
+            .HasMaxLength(200);
+
+        builder.Ignore(x => x.DisplayName);
         builder.Ignore(x => x.FullName);
 
         builder.OwnsOne(x => x.Address, address =>
@@ -40,7 +44,8 @@ public class CustomerConfiguration : IEntityTypeConfiguration<Customer>
                 .IsRequired();
 
             address.Property(a => a.Line2)
-                .HasMaxLength(200);
+                .HasMaxLength(200)
+                .IsRequired(false);
 
             address.Property(a => a.City)
                 .HasMaxLength(100)
@@ -55,41 +60,33 @@ public class CustomerConfiguration : IEntityTypeConfiguration<Customer>
                 .IsRequired();
         });
 
-
-        builder.Property(x => x.Email).HasConversion(
-            Email => Email.Value,
-            value => EmailAddress.Create(value)!);
-
-
         builder.Property(x => x.Email)
+            .HasConversion(
+                email => email.Value,
+                value => EmailAddress.Create(value))
             .HasMaxLength(100)
             .IsRequired();
 
         builder.HasIndex(x => x.Email).IsUnique();
 
-
-        builder.Property(x => x.PhoneNumber).HasConversion(
-            PhoneNumber => PhoneNumber.Value,
-            value => PhoneNumber.Create(value)!);
+        builder.Property(x => x.PhoneNumber)
+            .HasConversion(
+                phoneNumber => phoneNumber.Value,
+                value => PhoneNumber.Create(value));
 
         builder.HasIndex(x => x.PhoneNumber).IsUnique();
 
-        builder.Property(x => x.Identify).HasConversion(
-            Identify => Identify.Value,
-            value => Identify.Create(value)!)
+        builder.Property(x => x.Identify)
+            .HasConversion(
+                identify => identify.Value,
+                value => Identify.Create(value))
             .HasMaxLength(11)
             .IsRequired();
-
 
         builder.HasIndex(x => x.Identify)
             .IsUnique();
 
         builder.Property(x => x.Active)
             .IsRequired();
-
-
-
-
-
     }
 }

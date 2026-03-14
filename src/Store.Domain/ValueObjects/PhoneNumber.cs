@@ -16,7 +16,7 @@ public partial record PhoneNumber
     /// <summary>
     /// Crea y valida un numero de telefono.
     /// </summary>
-    public static PhoneNumber? Create(string value)
+    public static PhoneNumber Create(string value)
     {
         if (string.IsNullOrWhiteSpace(value))
             throw new DomainException(PhoneError.Empty);
@@ -25,7 +25,7 @@ public partial record PhoneNumber
 
         if (normalized.Length > DefaultLength)
             throw new DomainException(PhoneError.TooLong(DefaultLength));
-        if (!System.Text.RegularExpressions.Regex.IsMatch(normalized, Pattern))
+        if (!Regex.IsMatch(normalized, Pattern))
             throw new DomainException(PhoneError.InvalidFormat);
 
         return new PhoneNumber(normalized);
