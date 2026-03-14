@@ -1,18 +1,34 @@
+/// <summary>
+/// Punto de entrada principal de la API HTTP.
+/// </summary>
+
+using Store.Api;
+using Store.Api.Extensions;
+using Store.Application;
+using Store.Infrastructure;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+builder.Services.AddPresentation()
+.AddInfrastructure(builder.Configuration)
+.AddApplication();
 
-builder.Services.AddControllers();
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-builder.Services.AddOpenApi();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+// Expone OpenAPI solo en entorno de desarrollo.
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
+    // app.ApplyMigrations();
 }
+app.UseSwagger();
+app.UseSwaggerUI(c =>
+{
+    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Store API V1");
+    c.RoutePrefix = "Swagger"; // Hace que Swagger UI esté disponible en la raíz (http://localhost:5000/Swagger)
+});
+
 
 app.UseHttpsRedirection();
 

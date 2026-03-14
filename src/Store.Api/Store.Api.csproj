@@ -7,10 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <!-- Soporte para generar el documento OpenAPI expuesto por la API. -->
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="10.0.5" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="10.1.5" />
   </ItemGroup>
 
   <ItemGroup>
+    <!-- La API compone la aplicaci�n conectando Application e Infrastructure. -->
     <ProjectReference Include="..\Store.Infrastructure\Store.Infrastructure.csproj" />
     <ProjectReference Include="..\Store.Application\Store.Application.csproj" />
   </ItemGroup>

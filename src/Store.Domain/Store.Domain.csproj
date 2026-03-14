@@ -5,7 +5,9 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
+
   <ItemGroup>
+    <!-- Nota arquitectonica: el dominio idealmente no deberia depender de Wolverine; hoy esta referencia existe y conviene revisarla mas adelante. -->
     <PackageReference Include="WolverineFx" Version="5.18.2" />
   </ItemGroup>
 

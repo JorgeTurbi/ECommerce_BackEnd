@@ -1,15 +1,25 @@
 using Store.Domain.Errors;
 using Store.Domain.Primitives;
+
 namespace Store.Domain.ValueObjects;
 
+/// <summary>
+/// Representa un correo electronico validado dentro del dominio.
+/// </summary>
 public partial record EmailAddress
 {
     private const int DefaultLength = 100;
+
+    /// <summary>
+    /// Valor normalizado del correo electronico.
+    /// </summary>
     public string Value { get; init; }
 
     private EmailAddress(string value) => Value = value;
 
-
+    /// <summary>
+    /// Crea y valida una direccion de correo electronico.
+    /// </summary>
     public static EmailAddress Create(string value)
     {
         if (string.IsNullOrWhiteSpace(value))
@@ -26,6 +36,9 @@ public partial record EmailAddress
         return new EmailAddress(normalized);
     }
 
+    /// <summary>
+    /// Determina si el correo posee un formato valido.
+    /// </summary>
     private static bool IsValidEmail(string email)
     {
         try
@@ -39,6 +52,3 @@ public partial record EmailAddress
         }
     }
 }
-
-
-

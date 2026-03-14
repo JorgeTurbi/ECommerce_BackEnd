@@ -2,6 +2,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Store.Api.Controllers;
 
+/// <summary>
+/// Controlador de ejemplo generado por la plantilla inicial de ASP.NET Core.
+/// </summary>
 [ApiController]
 [Route("[controller]")]
 public class WeatherForecastController : ControllerBase
@@ -11,6 +14,9 @@ public class WeatherForecastController : ControllerBase
         "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
     ];
 
+    /// <summary>
+    /// Devuelve una coleccion de pronosticos generados de forma aleatoria.
+    /// </summary>
     [HttpGet(Name = "GetWeatherForecast")]
     public IEnumerable<WeatherForecast> Get()
     {

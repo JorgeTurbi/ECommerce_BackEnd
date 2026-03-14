@@ -1,6 +1,8 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
+  <!-- Capa Infrastructure: implementa persistencia y adaptadores externos. -->
   <ItemGroup>
+    <!-- Infrastructure implementa contratos definidos en Domain y Application. -->
     <ProjectReference Include="..\Store.Domain\Store.Domain.csproj" />
     <ProjectReference Include="..\Store.Application\Store.Application.csproj" />
   </ItemGroup>
@@ -10,5 +12,21 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
+
+  <ItemGroup>
+    <!-- EF Core implementa el contexto y el acceso a datos de Infrastructure. -->
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="10.0.5" />
+    <!-- EF Core Relational: habilita ToTable, HasIndex, etc. -->
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="10.0.5" />
+    <!-- EF Core Design: necesario para comandos CLI de migrations (dotnet ef). -->
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="10.0.5">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <!-- Wolverine publica eventos de dominio desde la persistencia. -->
+    <PackageReference Include="WolverineFx" Version="5.19.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="10.0.5" />
+    <PackageReference Include="DotNetEnv" Version="3.1.1" />
+  </ItemGroup>
 
 </Project>

@@ -1,6 +1,8 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
+  <!-- Capa Application: orquesta casos de uso, validaciones y mensajeria interna. -->
   <ItemGroup>
+    <!-- Application depende del dominio para ejecutar reglas de negocio sin acoplarse a Infrastructure. -->
     <ProjectReference Include="..\Store.Domain\Store.Domain.csproj" />
   </ItemGroup>
 
@@ -9,5 +11,15 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Wolverine descubre handlers por convencion y ejecuta commands/queries. -->
+    <PackageReference Include="WolverineFx" Version="5.19.1" />
+    <!-- FluentValidation se usa para validar requests de las slices. -->
+    <PackageReference Include="FluentValidation" Version="12.1.1" />
+    <PackageReference Include="FluentValidation.AspNetCore" Version="11.3.1" />
+    <!-- EF Core se usa hoy para queries y contratos de acceso a datos. -->
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="10.0.5" />
+  </ItemGroup>
 
 </Project>
