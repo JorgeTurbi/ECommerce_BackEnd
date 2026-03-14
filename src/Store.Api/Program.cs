@@ -1,6 +1,4 @@
-/// <summary>
-/// Punto de entrada principal de la API HTTP.
-/// </summary>
+// Punto de entrada principal de la API HTTP.
 
 using Store.Api;
 using Store.Api.Extensions;
@@ -20,7 +18,7 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
-    // app.ApplyMigrations();
+    app.ApplyMigrations();
 }
 app.UseSwagger();
 app.UseSwaggerUI(c =>

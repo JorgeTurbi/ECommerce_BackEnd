@@ -24,6 +24,7 @@ public sealed class ApplicationDbContext : DbContext, IApplicationDbContext, IUn
         _messageBus = messageBus;
     }
 
+
     /// <summary>
     /// Conjunto de clientes persistidos en el sistema.
     /// </summary>

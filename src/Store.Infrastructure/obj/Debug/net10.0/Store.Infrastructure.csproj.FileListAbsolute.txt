@@ -1,4 +1,5 @@
 C:\Drive Microsoft\OneDrive\Documentos\Projects\ZOCO\BackEnd\src\Store.Infrastructure\bin\Debug\net10.0\Store.Infrastructure.deps.json
+C:\Drive Microsoft\OneDrive\Documentos\Projects\ZOCO\BackEnd\src\Store.Infrastructure\bin\Debug\net10.0\Store.Infrastructure.runtimeconfig.json
 C:\Drive Microsoft\OneDrive\Documentos\Projects\ZOCO\BackEnd\src\Store.Infrastructure\bin\Debug\net10.0\Store.Infrastructure.dll
 C:\Drive Microsoft\OneDrive\Documentos\Projects\ZOCO\BackEnd\src\Store.Infrastructure\bin\Debug\net10.0\Store.Infrastructure.pdb
 C:\Drive Microsoft\OneDrive\Documentos\Projects\ZOCO\BackEnd\src\Store.Infrastructure\bin\Debug\net10.0\Store.Application.dll
@@ -10,11 +11,10 @@ C:\Drive Microsoft\OneDrive\Documentos\Projects\ZOCO\BackEnd\src\Store.Infrastru
 C:\Drive Microsoft\OneDrive\Documentos\Projects\ZOCO\BackEnd\src\Store.Infrastructure\obj\Debug\net10.0\Store.Infrastructure.AssemblyInfoInputs.cache
 C:\Drive Microsoft\OneDrive\Documentos\Projects\ZOCO\BackEnd\src\Store.Infrastructure\obj\Debug\net10.0\Store.Infrastructure.AssemblyInfo.cs
 C:\Drive Microsoft\OneDrive\Documentos\Projects\ZOCO\BackEnd\src\Store.Infrastructure\obj\Debug\net10.0\Store.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Drive Microsoft\OneDrive\Documentos\Projects\ZOCO\BackEnd\src\Store.Infrastructure\obj\Debug\net10.0\Store.Infrastructure.sourcelink.json
 C:\Drive Microsoft\OneDrive\Documentos\Projects\ZOCO\BackEnd\src\Store.Infrastructure\obj\Debug\net10.0\Store.In.0CBF2D60.Up2Date
 C:\Drive Microsoft\OneDrive\Documentos\Projects\ZOCO\BackEnd\src\Store.Infrastructure\obj\Debug\net10.0\Store.Infrastructure.dll
 C:\Drive Microsoft\OneDrive\Documentos\Projects\ZOCO\BackEnd\src\Store.Infrastructure\obj\Debug\net10.0\refint\Store.Infrastructure.dll
 C:\Drive Microsoft\OneDrive\Documentos\Projects\ZOCO\BackEnd\src\Store.Infrastructure\obj\Debug\net10.0\Store.Infrastructure.pdb
-C:\Drive Microsoft\OneDrive\Documentos\Projects\ZOCO\BackEnd\src\Store.Infrastructure\obj\Debug\net10.0\ref\Store.Infrastructure.dll
-C:\Drive Microsoft\OneDrive\Documentos\Projects\ZOCO\BackEnd\src\Store.Infrastructure\obj\Debug\net10.0\Store.Infrastructure.sourcelink.json
-C:\Drive Microsoft\OneDrive\Documentos\Projects\ZOCO\BackEnd\src\Store.Infrastructure\bin\Debug\net10.0\Store.Infrastructure.runtimeconfig.json
 C:\Drive Microsoft\OneDrive\Documentos\Projects\ZOCO\BackEnd\src\Store.Infrastructure\obj\Debug\net10.0\Store.Infrastructure.genruntimeconfig.cache
+C:\Drive Microsoft\OneDrive\Documentos\Projects\ZOCO\BackEnd\src\Store.Infrastructure\obj\Debug\net10.0\ref\Store.Infrastructure.dll

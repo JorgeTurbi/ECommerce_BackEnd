@@ -12,8 +12,14 @@ using Store.Infrastructure.Persistence.Repositories;
 using Store.Infrastructure.Persistence;
 namespace Store.Infrastructure;
 
+/// <summary>
+/// Contiene las extensiones de la capa Infrastructure para configurar servicios y persistencia.
+/// </summary>
 public static class DependencyInjection
 {
+    /// <summary>
+    /// Registra los servicios de infraestructura (persistencia, repositorios, UoW) en el contenedor.
+    /// </summary>
     public static IServiceCollection AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
     {
         services.AddPersistence(configuration);
@@ -24,11 +30,12 @@ public static class DependencyInjection
     {
         // Carga variables de entorno desde un .env cuando existe (útil en desarrollo local).
         // Busca el archivo en el directorio de trabajo actual y en todos los padres hasta la raíz.
-        var envPath = FindDotEnvFile(Directory.GetCurrentDirectory());
-        if (envPath != null)
-        {
-            Env.Load(envPath);
-        }
+        // var envPath = FindDotEnvFile(Directory.GetCurrentDirectory());
+        // if (envPath != null)
+        // {
+        //     Env.Load();
+        // }
+        Env.Load();
 
         var connectionString = configuration.GetConnectionString("DatabaseConnection")
             ?? Environment.GetEnvironmentVariable("ConnectionStrings__DatabaseConnection");

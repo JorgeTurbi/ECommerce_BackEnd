@@ -1,0 +1,11 @@
+
+
+*.env
+*.local
+*.user
+bin/
+obj/
+.vs/
+.idea/
+
+    
